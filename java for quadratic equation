@@ -1,0 +1,62 @@
+import java.util.*;  
+public class qe
+{  
+public static void main(String[] args)   
+{  
+Scanner sc = new Scanner(System.in);  
+System.out.println("Enter the value of a: ");  
+double a = sc.nextDouble();  
+System.out.println("Enter the value of b: ");  
+double b = sc.nextDouble();  
+System.out.println("Enter the value of c: ");  
+double c = sc.nextDouble();  
+double d= b * b - 4.0 * a * c;  
+if (d> 0.0)   
+{  
+double r1 = (-b + Math.pow(d, 0.5)) / (2.0 * a);  
+double r2 = (-b - Math.pow(d, 0.5)) / (2.0 * a);  
+System.out.println("The roots are " + r1 + " and " + r2);  
+}   
+else if (d == 0.0) 
+{  
+double r1 = -b / (2.0 * a);  
+System.out.println("The root is " + r1);  
+}   
+else   
+{  
+System.out.println("Roots are not real.");  
+}// end of else   
+}// end of main
+}// end of class     
+
+
+
+output:
+
+
+C:\Users\bmsce\Desktop>java qe
+Enter the value of a:
+1
+Enter the value of b:
+42
+Enter the value of c:
+1
+The roots are -0.02382303659696916 and -41.976176963403034
+
+C:\Users\bmsce\Desktop>java qe
+Enter the value of a:
+1
+Enter the value of b:
+4
+Enter the value of c:
+1
+The roots are -0.2679491924311228 and -3.732050807568877
+
+C:\Users\bmsce\Desktop>java qe
+Enter the value of a:
+1
+Enter the value of b:
+2
+Enter the value of c:
+1
+The root is -1.0
