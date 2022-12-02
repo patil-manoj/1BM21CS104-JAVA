@@ -1,0 +1,70 @@
+import java.util.*;
+
+public class student {
+    private String usn;
+    private String name;
+
+    public String getusn() {
+        return usn;
+    }
+
+    public void setusn(String usn) {
+        this.usn = usn;
+    }
+
+    public String getname() {
+        return name;
+    }
+
+    public void setname(String name) {
+        this.name = name;
+    }
+
+    public float sgpa(int credits[], int marks[]) {
+        float sgpa=0;
+        for (int i = 0; i <4; i++) {
+            if (marks[i] >= 90) {
+                sgpa += 10 * credits[i];
+            } else if (marks[i] >= 80) {
+                sgpa += 9 * credits[i];
+            } else if (marks[i] >= 70) {
+                sgpa += 8 * credits[i];
+            } else if (marks[i] >= 60) {
+                sgpa += 7 * credits[i];
+            }
+        }
+        sgpa= sgpa/(credits[0]+credits[1]+credits[2]+credits[3]); 
+        return sgpa;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("enter your name ");
+        Scanner s = new Scanner(System.in);
+        String name = s.nextLine();
+        student man = new student();
+        man.setname(name);
+        
+        System.out.println("enter your usn");
+        String usn = s.nextLine();
+        man.setusn(usn);
+        
+        System.out.println("enter your CREDITS for subjects");
+        int[] credits = new int[4];
+        for (int i = 0; i < 4; i++) {
+            credits[i] = s.nextInt();
+        }
+        System.out.println("enter your marks");
+        int[] marks = new int[4];
+        for (int j = 0; j < 4; j++) {
+            marks[j] = s.nextInt();
+        }
+    
+    System.out.println(man.getname());
+    System.out.println(man.getusn());
+
+    System.out.println("your sgpa");
+    System.out.println(man.sgpa(credits,marks));
+
+    
+    }
+}
