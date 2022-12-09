@@ -1,0 +1,71 @@
+import java.util.*;
+
+public class book {
+    private String name;
+    private String author;
+    private int price;
+    private int num_pages;
+
+    public book() {
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getNum_pages() {
+        return num_pages;
+    }
+
+    public void setNum_pages(int num_pages) {
+        this.num_pages = num_pages;
+    }
+
+    public static void main(String[] args) {
+        book b = new book();
+        Scanner s = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter number of the book");
+        int k = s.nextInt();
+        for (int i = 0; i < k; i++) {
+            System.out.println("enter name of the book");
+            String a = sc.nextLine();
+            b.setName(a);
+            System.out.println("enter name of the author");
+            String b1 = sc.nextLine();
+            b.setAuthor(b1);
+            System.out.println("enter price of the book");
+            int c = s.nextInt();
+            b.setPrice(c);
+            System.out.println("enter number of pages of the book");
+            int d = s.nextInt();
+            b.setNum_pages(d);
+            System.out.println("your details");
+            System.out.println(b.getName());
+            System.out.println(b.getAuthor());
+            System.out.println(b.getPrice());
+            System.out.println(b.getNum_pages());
+        }
+    }
+}
