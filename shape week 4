@@ -1,0 +1,119 @@
+import java.util.*;
+
+abstract class shapes {
+
+    int a;
+    int b;
+
+    abstract void printArea();
+}
+
+class rectangle extends shapes {
+
+    public int getA() {
+        return a;
+    }
+
+    public void setA(int a) {
+        this.a = a;
+    }
+
+    public int getB() {
+        return b;
+    }
+
+    public void setB(int b) {
+        this.b = b;
+    }
+
+    @Override
+    void printArea() {
+        int area;
+        area = a * b;
+        System.out.println("Area is " + area);
+    }
+}
+
+class triangle extends shapes {
+    public int getA() {
+        return a;
+    }
+
+    public void setA(int a) {
+        this.a = a;
+    }
+
+    public int getB() {
+        return b;
+    }
+
+    public void setB(int b) {
+        this.b = b;
+    }
+
+    @Override
+    void printArea() {
+        double area;
+        area = (a * b) / 2;
+        System.out.println("Area is " + area);
+    }
+}
+
+class circle extends shapes {
+    public int getA() {
+        return a;
+    }
+
+    public void setA(int a) {
+        this.a = a;
+    }
+
+    public int getB() {
+        return b;
+    }
+
+    public void setB(int b) {
+        this.b = b;
+    }
+
+    @Override
+    void printArea() {
+        double area;
+        area = Math.PI * a * a;
+        System.out.println("Area is " + area);
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        rectangle r = new rectangle();
+        triangle t = new triangle();
+        circle c = new circle();
+
+        System.out.println("enter the value\n 1 for rectangle\n 2 for triangle\n 3 for circle");
+        int k;
+        k = s.nextInt();
+        if (k == 1) {
+            System.out.println("enter the length");
+            r.setA(s.nextInt());
+            System.out.println("enter the breadth");
+            r.setB(s.nextInt());
+            r.printArea();
+        }
+
+        else if (k == 2) {
+            System.out.println("enter the base length");
+            t.setA(s.nextInt());
+            System.out.println("enter the heigth");
+            t.setB(s.nextInt());
+            t.printArea();
+        }
+
+        else if (k == 3) {
+            System.out.println("enter the radius");
+            c.setA(s.nextInt());
+            c.printArea();
+        }
+
+        s.close();
+    }
+}
